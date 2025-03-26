@@ -19,4 +19,3 @@ UNWIND value['items'] as item
 ```
 CALL db.schema.visualization
 ```
-
