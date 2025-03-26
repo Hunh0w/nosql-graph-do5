@@ -149,22 +149,3 @@ RETURN
     nodes(path) as path
 ORDER BY index
 ```
-
-### Give me the details of all the Crimes under investigation by Officer Larive (Badge Number 26-5234182)
-```
-MATCH (c:Crime {last_outcome: "Under investigation"})-[i:INVESTIGATED_BY]->(o:Officer {badge_no: "26-5234182", surname: "Larive"})
-RETURN c, i, o;
-```
-
-There is 8 crimes found
-
-
-## shortest path between jack and raymond
-```
-MATCH p = SHORTEST 1 (p1:Person)-[:KNOWS|KNOWS_LW|KNOWS_PHONE|KNOWS_SN]-+(p2:Person)
-WHERE p1.name = "Jack" AND p2.name = "Raymond"
-RETURN [n in nodes(p) | n.name] AS stops
-ORDER BY size(stops) ASC;
-```
-![image](./imgs/img2742.png)
-

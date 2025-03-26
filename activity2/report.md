@@ -1,51 +1,173 @@
-```
-CALL apoc.load.json("file:///file.json") YIELD value;
-```
+# Install
+
+Working on the Movie database.
+
+Change the following lines in the config:
 
 ```
-WITH "file:///nvdcve-1.1-2024.json" as url 
-CALL apoc.load.json(url) YIELD value 
-UNWIND keys(value) AS key
-RETURN key, apoc.meta.cypher.type(value[key]);
-```
-```
-WITH "file:///nvdcve-1.1-2024.json" as url 
-CALL apoc.load.json(url) YIELD value 
-UNWIND  value.CVE_data_numberOfCVEs as Cnt
-RETURN Cnt;
-```
-```
-╒═══════╕
-│Cnt    │
-╞═══════╡
-│"37388"│
-└───────┘
+dbms.memory.heap.initial_size=1024m
+dbms.memory.heap.max_size=4G
+dbms.memory.pagecache.size=2G
 ```
 
-# OR
-
-## Count
+Then we have to clear our database:
 ```
-WITH "file:///nvdcve-1.1-2024.json" as url 
-CALL apoc.load.json(url) YIELD value 
-UNWIND  value.CVE_Items as cve
-RETURN COUNT(cve);
+MATCH (n) DETACH DELETE n
 ```
 
-## Limit data items
+This command will delete everything in it.
+
+To view the schema:
 ```
-WITH "file:///nvdcve-1.1-2024.json" as url 
-CALL apoc.load.json(url) YIELD value 
-UNWIND  value.CVE_Items as data
-RETURN data limit 5;
+CALL db.schema.visualization
 ```
 
-# Create Nodes from JSON Files
+# Steps
+
+## Step 1
+
+Find all movies that have been released betweeen 2005 and 2010:
+
 ```
-CALL apoc.periodic.iterate("CALL apoc.load.json('file:///nvdcve-1.1-2024.json') YIELD value",
-"UNWIND  value.CVE_Items AS data  \r\n"+
-"UNWIND data.cve.references.reference_data AS references \r\n"+
-"MERGE (cveItem:CVE {uid: apoc.create.uuid()}) \r\n"+
-"ON CREATE SET cveItem.cveid = data.cve.CVE_data_meta.ID, cveItem.references = references.url",
- {batchSize:100, iterateList:true});
+MATCH (m:Movie)
+WHERE m.released > 2005 AND m.released < 2010
+RETURN m
+```
+
+Output:
+```
+╒══════════════════════════════════════════════════════════════════════╕
+│m                                                                     │
+╞══════════════════════════════════════════════════════════════════════╡
+│(:Movie {tagline: "Based on the extraordinary true story of one man's │
+│fight for freedom",title: "RescueDawn",released: 2006})               │
+├──────────────────────────────────────────────────────────────────────┤
+│(:Movie {tagline: "Break The Codes",title: "The Da Vinci Code",release│
+│d: 2006})                                                             │
+├──────────────────────────────────────────────────────────────────────┤
+│(:Movie {tagline: "Freedom! Forever!",title: "V for Vendetta",released│
+│: 2006})                                                              │
+├──────────────────────────────────────────────────────────────────────┤
+│(:Movie {tagline: "Speed has no limits",title: "Speed Racer",released:│
+│ 2008})                                                               │
+├──────────────────────────────────────────────────────────────────────┤
+│(:Movie {tagline: "Prepare to enter a secret world of assassins",title│
+│: "Ninja Assassin",released: 2009})                                   │
+├──────────────────────────────────────────────────────────────────────┤
+│(:Movie {tagline: "400 million people were waiting for the truth.",tit│
+│le: "Frost/Nixon",released: 2008})                                    │
+├──────────────────────────────────────────────────────────────────────┤
+│(:Movie {tagline: "A stiff drink. A little mascara. A lot of nerve. Wh│
+│o said they couldn't bring down the Soviet empire.",title: "Charlie Wi│
+│lson's War",released: 2007})                                          │
+└──────────────────────────────────────────────────────────────────────┘
+```
+
+To get the number of movies between 2005 and 2010:
+```
+MATCH (m:Movie)
+WHERE m.released > 2005 AND m.released < 2010
+RETURN COUNT(m)
+```
+
+Output:
+```
+╒════════╕
+│COUNT(m)│
+╞════════╡
+│7       │
+└────────┘
+```
+
+## Step 2
+
+```
+MATCH (m:Movie)<-[:ACTED_IN]-(p:Person)
+WITH m, collect(p) AS Actors
+WHERE size(Actors) > 2
+RETURN m.title, size(Actors) AS NB_Actors
+```
+First lines of output:
+```
+╒════════════════════════╤═════════╕
+│m.title                 │NB_Actors│
+╞════════════════════════╪═════════╡
+│"The Matrix"            │5        │
+├────────────────────────┼─────────┤
+│"The Matrix Reloaded"   │4        │
+├────────────────────────┼─────────┤
+│"The Matrix Revolutions"│4        │
+├────────────────────────┼─────────┤
+```
+
+
+## Step 3
+
+Return first and last movie.
+
+```
+MATCH (m:Movie)
+RETURN MIN(m.released), MAX(m.released)
+```
+
+Output:
+
+```
+╒═══════════════╤═══════════════╕
+│MIN(m.released)│MAX(m.released)│
+╞═══════════════╪═══════════════╡
+│1975           │2012           │
+└───────────────┴───────────────┘
+```
+
+
+## Step 4
+
+Create a new Actor (us) and a Movie in which we have acted in.
+
+### Actor creation
+
+```
+CREATE (p:Person {born:2001, name: "Muriel"} )
+```
+You should see `Added 1 label, created 1 node set 2 properties`. This indicates that the Person has been created successfully.
+
+### Movie creation
+
+```
+CREATE (m:Movie {released: 2025, title: "The Story of Teyvat", tagline: "Best movie ever", genre: "Fantasy"})
+```
+Or, if you want to add genre afterwards: 
+```
+CREATE (m:Movie {released: 2025, title: "The Story of Teyvat", tagline: "Best movie ever", genre: "Fantasy"})
+``` 
+```
+MATCH (m:Movie {title: "The Story of Teyvat"})
+SET m.genre = "Fantasy"
+```
+
+As for Step 1, you should have confirmation after each command that something has been created.
+
+### Relationship creation
+
+```
+MATCH (p:Person {name: "Muriel"}), (m:Movie {title: "The Story of Teyvat"})
+CREATE (p)-[:ACTED_IN]->(m)
+```
+Output should show that it was created.
+
+### Verification
+```
+MATCH (p:Person {name: "Muriel"})-[r:ACTED_IN]->(m:Movie {title: "The Story of Teyvat"})
+RETURN p,r,m
+```
+
+Output:
+```
+═════════════════════════════════╤═══════════╤══════════════════════════════════════════════════════════════════════╕
+│p                                    │r          │m                                                                     │
+╞═════════════════════════════════════╪═══════════╪══════════════════════════════════════════════════════════════════════╡
+│(:Person {born: 2001,name: "Muriel"})│[:ACTED_IN]│(:Movie {genre: "Fantasy",tagline: "Best movie ever",title: "The Story│
+│                                     │           │ of Teyvat",released: 2025})                                          │
+└─────────────────────────────────────┴───────────┴──────────────────────────────────────────────────────────────────────┘
 ```
