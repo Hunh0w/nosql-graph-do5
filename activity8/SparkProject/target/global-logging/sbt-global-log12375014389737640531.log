@@ -1,0 +1,9 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(assembly, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: assembly[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0m1838 file(s) merged using strategy 'First' (Run the task at debug level to see the details)[0m
+[0m[[0m[0minfo[0m] [0m[0m1016 file(s) merged using strategy 'Discard' (Run the task at debug level to see the details)[0m
+[0m[[0m[0minfo[0m] [0m[0mBuilt: /home/vfont/Documents/DO5/NOSQL/activity8/SparkProject/target/scala-2.12/Simple Project-assembly-1.0.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mJar hash: 00671c59501669caf463173a6c86e17557c37209[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 53 s, completed 26 mars 2025 à 10:52:29[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(idea-shell, None, None)[0m

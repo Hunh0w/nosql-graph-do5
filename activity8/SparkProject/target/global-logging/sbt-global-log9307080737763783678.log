@@ -1,0 +1,192 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(assembly, None, None)[0m
+[0m[[0m[33mwarn[0m] [0m[0mbuild source files have changed[0m
+[0m[[0m[33mwarn[0m] [0m[0mmodified files: [0m
+[0m[[0m[33mwarn[0m] [0m[0m  /home/vfont/Documents/DO5/NOSQL/activity8/SparkProject/build.sbt[0m
+[0m[[0m[33mwarn[0m] [0m[0mApply these changes by running `reload`.[0m
+[0m[[0m[33mwarn[0m] [0m[0mAutomatically reload the build when source changes are detected by setting `Global / onChangedBuildSource := ReloadOnSourceChanges`.[0m
+[0m[[0m[33mwarn[0m] [0m[0mDisable this warning by setting `Global / onChangedBuildSource := IgnoreSourceChanges`.[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: assembly[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[31merror[0m] [0m[0m21 error(s) were encountered during the merge:[0m
+[0m[[0m[31merror[0m] [0m[0mjava.lang.RuntimeException: [0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/api.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/api.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/field_mask.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/field_mask.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-logging-1.1.3.jar, jar org = commons-logging, entry target = org/apache/commons/logging/impl/NoOpLog.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = org/apache/commons/logging/impl/NoOpLog.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-logging-1.1.3.jar, jar org = commons-logging, entry target = org/apache/commons/logging/Log.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = org/apache/commons/logging/Log.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/struct.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/struct.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = arrow-format-12.0.1.jar, jar org = org.apache.arrow, entry target = arrow-git.properties[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = arrow-memory-core-12.0.1.jar, jar org = org.apache.arrow, entry target = arrow-git.properties[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = arrow-memory-netty-12.0.1.jar, jar org = org.apache.arrow, entry target = arrow-git.properties[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = arrow-vector-12.0.1.jar, jar org = org.apache.arrow, entry target = arrow-git.properties[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jackson-annotations-2.15.2.jar, jar org = com.fasterxml.jackson.core, entry target = module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = compress-lzf-1.1.2.jar, jar org = com.ning, entry target = module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jakarta.ws.rs-api-2.1.6.jar, jar org = jakarta.ws.rs, entry target = module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = threeten-extra-1.7.1.jar, jar org = org.threeten, entry target = module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/duration.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/duration.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/timestamp.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/timestamp.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-logging-1.1.3.jar, jar org = commons-logging, entry target = org/apache/commons/logging/LogFactory.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = org/apache/commons/logging/LogFactory.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-logging-1.1.3.jar, jar org = commons-logging, entry target = org/apache/commons/logging/LogConfigurationException.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = org/apache/commons/logging/LogConfigurationException.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/source_context.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/source_context.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/empty.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/empty.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/descriptor.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/descriptor.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-logging-1.1.3.jar, jar org = commons-logging, entry target = org/apache/commons/logging/impl/SimpleLog.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = org/apache/commons/logging/impl/SimpleLog.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/wrappers.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/wrappers.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = datasketches-memory-2.1.0.jar, jar org = org.apache.datasketches, entry target = META-INF/versions/11/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = hadoop-client-runtime-3.3.4.jar, jar org = org.apache.hadoop, entry target = META-INF/versions/11/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/any.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/any.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jackson-core-2.15.2.jar, jar org = com.fasterxml.jackson.core, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jackson-databind-2.15.2.jar, jar org = com.fasterxml.jackson.core, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jackson-datatype-jsr310-2.15.1.jar, jar org = com.fasterxml.jackson.datatype, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = gson-2.10.1.jar, jar org = com.google.code.gson, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-codec-1.17.0.jar, jar org = commons-codec, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-io-2.16.1.jar, jar org = commons-io, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-compress-1.26.2.jar, jar org = org.apache.commons, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = log4j-api-2.20.0.jar, jar org = org.apache.logging.log4j, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = parquet-jackson-1.13.1.jar, jar org = org.apache.parquet, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = slf4j-api-2.0.7.jar, jar org = org.slf4j, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = xz-1.9.jar, jar org = org.tukaani, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/type.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/type.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = log4j-1.2-api-2.20.0.jar, jar org = org.apache.logging.log4j, entry target = META-INF/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = log4j-core-2.20.0.jar, jar org = org.apache.logging.log4j, entry target = META-INF/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbtassembly.Assembly$.merge(Assembly.scala:604)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbtassembly.Assembly$.$anonfun$assemble$35(Assembly.scala:327)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbtassembly.Assembly$.timed$1(Assembly.scala:219)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbtassembly.Assembly$.$anonfun$assemble$34(Assembly.scala:326)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbtassembly.PluginCompat$.$anonfun$cachedAssembly$2(PluginCompat.scala:82)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:74)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbtassembly.PluginCompat$.cachedAssembly(PluginCompat.scala:86)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbtassembly.Assembly$.assemble(Assembly.scala:423)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbtassembly.Assembly$.$anonfun$assemblyTask$1(Assembly.scala:186)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function1.$anonfun$compose$1(Function1.scala:49)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.std.Transform$$anon$4.work(Transform.scala:69)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.work(Execute.scala:292)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.lang.Thread.run(Thread.java:829)[0m
+[0m[[0m[31merror[0m] [0m[0m([31massembly[0m) [0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/api.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/api.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/field_mask.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/field_mask.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-logging-1.1.3.jar, jar org = commons-logging, entry target = org/apache/commons/logging/impl/NoOpLog.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = org/apache/commons/logging/impl/NoOpLog.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-logging-1.1.3.jar, jar org = commons-logging, entry target = org/apache/commons/logging/Log.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = org/apache/commons/logging/Log.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/struct.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/struct.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = arrow-format-12.0.1.jar, jar org = org.apache.arrow, entry target = arrow-git.properties[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = arrow-memory-core-12.0.1.jar, jar org = org.apache.arrow, entry target = arrow-git.properties[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = arrow-memory-netty-12.0.1.jar, jar org = org.apache.arrow, entry target = arrow-git.properties[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = arrow-vector-12.0.1.jar, jar org = org.apache.arrow, entry target = arrow-git.properties[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jackson-annotations-2.15.2.jar, jar org = com.fasterxml.jackson.core, entry target = module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = compress-lzf-1.1.2.jar, jar org = com.ning, entry target = module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jakarta.ws.rs-api-2.1.6.jar, jar org = jakarta.ws.rs, entry target = module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = threeten-extra-1.7.1.jar, jar org = org.threeten, entry target = module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/duration.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/duration.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/timestamp.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/timestamp.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-logging-1.1.3.jar, jar org = commons-logging, entry target = org/apache/commons/logging/LogFactory.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = org/apache/commons/logging/LogFactory.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-logging-1.1.3.jar, jar org = commons-logging, entry target = org/apache/commons/logging/LogConfigurationException.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = org/apache/commons/logging/LogConfigurationException.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/source_context.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/source_context.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/empty.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/empty.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/descriptor.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/descriptor.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-logging-1.1.3.jar, jar org = commons-logging, entry target = org/apache/commons/logging/impl/SimpleLog.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = org/apache/commons/logging/impl/SimpleLog.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/wrappers.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/wrappers.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = datasketches-memory-2.1.0.jar, jar org = org.apache.datasketches, entry target = META-INF/versions/11/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = hadoop-client-runtime-3.3.4.jar, jar org = org.apache.hadoop, entry target = META-INF/versions/11/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/any.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/any.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jackson-core-2.15.2.jar, jar org = com.fasterxml.jackson.core, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jackson-databind-2.15.2.jar, jar org = com.fasterxml.jackson.core, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jackson-datatype-jsr310-2.15.1.jar, jar org = com.fasterxml.jackson.datatype, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = gson-2.10.1.jar, jar org = com.google.code.gson, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-codec-1.17.0.jar, jar org = commons-codec, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-io-2.16.1.jar, jar org = commons-io, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = commons-compress-1.26.2.jar, jar org = org.apache.commons, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = log4j-api-2.20.0.jar, jar org = org.apache.logging.log4j, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = parquet-jackson-1.13.1.jar, jar org = org.apache.parquet, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = jcl-over-slf4j-2.0.7.jar, jar org = org.slf4j, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = slf4j-api-2.0.7.jar, jar org = org.slf4j, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = xz-1.9.jar, jar org = org.tukaani, entry target = META-INF/versions/9/module-info.class[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = protobuf-java-3.19.6.jar, jar org = com.google.protobuf, entry target = google/protobuf/type.proto[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = spark-core_2.12-3.5.5.jar, jar org = org.apache.spark, entry target = google/protobuf/type.proto[0m
+[0m[[0m[31merror[0m] [0m[0mDeduplicate found different file contents in the following:[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = log4j-1.2-api-2.20.0.jar, jar org = org.apache.logging.log4j, entry target = META-INF/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat[0m
+[0m[[0m[31merror[0m] [0m[0m  Jar name = log4j-core-2.20.0.jar, jar org = org.apache.logging.log4j, entry target = META-INF/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 6 s, completed 26 mars 2025 à 10:47:14[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(idea-shell, None, None)[0m
