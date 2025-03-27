@@ -56,3 +56,5 @@ $ kubectl logs pod/spark-minio-driver | grep 'Users in'
 ```
 
 ![image](./imgs/sparkapp-kube.png)
+
+It Works !
