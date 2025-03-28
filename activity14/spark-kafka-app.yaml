@@ -1,0 +1,37 @@
+apiVersion: sparkoperator.k8s.io/v1beta2
+kind: SparkApplication
+metadata:
+  name: spark-kafka-app
+  namespace: default
+spec:
+  type: Scala
+  mode: cluster
+  image: 10.43.0.50:5000/spark-kafka
+  imagePullPolicy: IfNotPresent
+  mainClass: KafkaStreaming
+  mainApplicationFile: s3a://do5/SparkKafkaStreaming.jar
+  arguments:
+  - "10.43.133.191:9092"
+  sparkVersion: 3.5.3
+  driver:
+    labels:
+      version: 3.5.3
+    cores: 1
+    memory: 512m
+    serviceAccount: spark-operator-spark
+  executor:
+    labels:
+      version: 3.5.3
+    instances: 1
+    cores: 1
+    memory: 512m
+  sparkConf:
+    "spark.hadoop.fs.s3a.endpoint": "http://minio:9000"
+    "spark.hadoop.fs.s3a.access.key": "G35EKnpvw30HgyUSIiwI"
+    "spark.hadoop.fs.s3a.secret.key": "rETf3blEpX0QHaHsH1v1DeNgRQAmQgmshAJf4Ens"
+    "spark.hadoop.fs.s3a.connection.ssl.enabled": "false"
+    "spark.hadoop.fs.s3a.path.style.access": "true"
+    "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem"
+    "spark.hadoop.fs.s3a.aws.credentials.provider": "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider"
+    "spark.driver.extraClassPath": "/opt/spark/jars/*"
+    "spark.executor.extraClassPath": "/opt/spark/jars/*"

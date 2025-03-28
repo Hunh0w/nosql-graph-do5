@@ -1,10 +1,18 @@
-# Use a base image with Java (Spark requires Java)
-FROM spark:3.5.5-scala2.12-java11-ubuntu
+# Stage 1: Downloader with full tools
+FROM debian:bullseye-slim AS downloader
 
-# Copy the Spark application JAR file to the container
-COPY jars/TestUserMinio-assembly-1.0.jar /app.jar
+# Install curl and set working directory
+RUN apt-get update && apt-get install -y curl && mkdir -p /tmp/jars
 
-# Set the default command to run the Spark application
-CMD ["spark-submit", "/app.jar"]
+WORKDIR /tmp/jars
 
-# admin xrJTAl7mWL
+RUN useradd -u 185 -m -s /bin/bash spark
+
+# Download the JARs
+RUN curl -L -o hadoop-aws-3.3.4.jar https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar && \
+curl -L -o aws-java-sdk-bundle-1.12.262.jar https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar && \
+chmod 644 *.jar && chown -R spark:spark .
+
+FROM spark:3.5.3
+
+COPY --from=downloader /tmp/jars/*.jar /opt/spark/jars/
